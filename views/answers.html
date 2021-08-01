@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    
+    <body>
+
+      <header>
+        <nav class="purple darken-4">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Kahoot Answer Extrator</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+          
+        <div id="respostasContainer" class="container" style="margin-top: 5rem;">
+          <div class="row">
+
+            {% for question in answers %}
+
+              <div class="col m3 s6">
+                <div class="card small purple darken-3">
+                  <div class="card-content white-text">
+                    <span class="card-title">Questão {{ question.index + 1 }}:</span>
+                    <p>{{ question.title }}</p>
+                    <div class="divider" style="margin-top: 1rem; margin-bottom: 1rem;"></div>
+                    <p>Resposta correta: {{ question.answer }}</p>
+                  </div>
+                </div>
+              </div>
+
+            {% endfor %}
+            
+          </div>
+        </div>
+        
+      </main>
+
+      <footer>
+
+      </footer>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    </body>
+
+  </html>
